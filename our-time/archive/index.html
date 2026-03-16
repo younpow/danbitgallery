@@ -1,2 +1,426 @@
-<h1>Archive</h1>
-<p>Our Time archive page</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archive | Our Time</title>
+  <meta
+    name="description"
+    content="Archive hub for Our Time, a long-term photographic project observing one living room over six years."
+  />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #6d6d6d;
+      --border: #e8e8e8;
+      --soft: #f7f7f5;
+      --max: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .topbar-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .nav a:hover {
+      color: #111;
+    }
+
+    .hero {
+      padding: 80px 0 56px;
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #9a9a9a;
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(40px, 6vw, 82px);
+      line-height: 1.02;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+    }
+
+    .intro {
+      margin-top: 24px;
+      max-width: 760px;
+      font-size: 18px;
+      line-height: 1.9;
+      color: #595959;
+    }
+
+    .korean-note {
+      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #7b7b7b;
+    }
+
+    .years {
+      padding: 70px 0 100px;
+      background: var(--soft);
+    }
+
+    .year-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .year-card {
+      display: block;
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 30px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .year-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+    }
+
+    .year-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      flex-wrap: wrap;
+    }
+
+    .year-label {
+      margin-bottom: 12px;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #a0a0a0;
+    }
+
+    .year-title {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+    }
+
+    .year-desc {
+      max-width: 560px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #5d5d5d;
+    }
+
+    .line {
+      margin-top: 24px;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, rgba(20,20,20,0.65), rgba(20,20,20,0.18), rgba(20,20,20,0.02));
+    }
+
+    .enter {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #111;
+    }
+
+    .coming {
+      color: #8a8a8a;
+    }
+
+    .note-block {
+      padding: 72px 0;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .note-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .note-card {
+      border: 1px solid var(--border);
+      padding: 28px;
+      background: #fff;
+    }
+
+    .note-card h3 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .note-card p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #666;
+    }
+
+    footer {
+      padding: 32px 0 44px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: #7b7b7b;
+      background: #fff;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: #111;
+    }
+
+    @media (max-width: 900px) {
+      .note-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .hero {
+        padding: 64px 0 46px;
+      }
+
+      .year-card {
+        padding: 22px;
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">Our Time / Archive</div>
+      <nav class="nav">
+        <a href="/our-time/">Home</a>
+        <a href="/our-time/selected/">Selected</a>
+        <a href="/">Danbit</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Archive</p>
+      <h1 class="title">
+        Six years.<br />
+        One room.
+      </h1>
+
+      <div class="intro">
+        The archive is built slowly. Each year gathers repeated views of the same living room, where light changes, seasons shift, and time settles into the space.
+      </div>
+
+      <p class="korean-note">
+        이 아카이브는 한 번에 완성되지 않습니다. 같은 거실을 오래 바라보며, 해마다 쌓이는 빛과 계절과 시간의 흔적을 기록합니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="years">
+    <div class="container">
+      <div class="year-list">
+        <a class="year-card" href="/our-time/archive/year-1.html">
+          <div class="year-top">
+            <div>
+              <div class="year-label">Available</div>
+              <h2 class="year-title">Year 1</h2>
+            </div>
+            <div class="year-desc">
+              The beginning of the sequence. The first repetitions, the first differences, the first accumulated light.
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="enter">Open Year 1 →</div>
+        </a>
+
+        <a class="year-card" href="#">
+          <div class="year-top">
+            <div>
+              <div class="year-label">Future Archive</div>
+              <h2 class="year-title">Year 2</h2>
+            </div>
+            <div class="year-desc">
+              The project continues through another layer of weather, light, and lived time.
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="enter coming">Coming later</div>
+        </a>
+
+        <a class="year-card" href="#">
+          <div class="year-top">
+            <div>
+              <div class="year-label">Future Archive</div>
+              <h2 class="year-title">Year 3</h2>
+            </div>
+            <div class="year-desc">
+              The same room remains, but repetition slowly makes change more visible.
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="enter coming">Coming later</div>
+        </a>
+
+        <a class="year-card" href="#">
+          <div class="year-top">
+            <div>
+              <div class="year-label">Future Archive</div>
+              <h2 class="year-title">Year 4</h2>
+            </div>
+            <div class="year-desc">
+              Time deepens the archive. Similar framing begins to hold different memory.
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="enter coming">Coming later</div>
+        </a>
+
+        <a class="year-card" href="#">
+          <div class="year-top">
+            <div>
+              <div class="year-label">Future Archive</div>
+              <h2 class="year-title">Year 5</h2>
+            </div>
+            <div class="year-desc">
+              Accumulation becomes its own form. The archive grows quieter, denser, and heavier.
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="enter coming">Coming later</div>
+        </a>
+
+        <a class="year-card" href="#">
+          <div class="year-top">
+            <div>
+              <div class="year-label">Future Archive</div>
+              <h2 class="year-title">Year 6</h2>
+            </div>
+            <div class="year-desc">
+              The first long sequence reaches its final year, while the room remains never quite the same.
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="enter coming">Coming later</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="note-block">
+    <div class="container note-grid">
+      <div class="note-card">
+        <h3>How to read the archive</h3>
+        <p>
+          This archive is not arranged around dramatic events. It is built from repetition, slight difference, and the slow visibility of time.
+        </p>
+      </div>
+
+      <div class="note-card">
+        <h3>Current status</h3>
+        <p>
+          The archive is ongoing. Year 1 is open first, and the following years will be added gradually as the project continues.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-row">
+      <div>Our Time © YounPow</div>
+      <div class="footer-links">
+        <a href="/our-time/">Home</a>
+        <a href="/our-time/selected/">Selected</a>
+        <a href="/">Danbit</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
