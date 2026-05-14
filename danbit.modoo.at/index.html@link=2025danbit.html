@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025 단빛 전시회 | 단빛 사진 갤러리</title>
+  <style>
+    :root { --green: #60db58; --text: #222; --muted: #666; --line: #eee; }
+    * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+    .header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 0 20px;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .nav::-webkit-scrollbar {
+      display: none;
+    }
+    .site-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111;
+      text-decoration: none;
+      margin-right: 16px;
+      flex: 0 0 auto;
+    }
+    .nav a {
+      color: #555;
+      text-decoration: none;
+      font-size: 15px;
+      flex: 0 0 auto;
+      padding: 25px 0 21px;
+      border-bottom: 3px solid transparent;
+    }
+    .nav a:hover { color: var(--green); }
+    .nav a.active {
+      color: var(--green);
+      font-weight: 700;
+      border-bottom-color: var(--green);
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 70px 20px 40px;
+    }
+    .title {
+      color: var(--green);
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .intro {
+      margin: 28px 0 20px;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .open-link {
+      display: inline-block;
+      margin: 0 0 24px;
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .frame-wrap {
+      width: 100%;
+      overflow: hidden;
+      background: #070b10;
+    }
+    iframe {
+      width: 100%;
+      height: 5200px;
+      border: 0;
+      display: block;
+      background: #070b10;
+    }
+    .footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 30px 20px 50px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 768px) {
+      .nav { height: 64px; gap: 16px; }
+      .site-title { font-size: 18px; }
+      .nav a { font-size: 14px; padding-top: 22px; }
+      .container { padding-top: 40px; }
+      iframe { height: 6200px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav" aria-label="단빛 사진 갤러리 메뉴">
+      <a class="site-title" href="index.html">단빛 사진 갤러리</a>
+      <a href="index.html@link=baom0g5s.html">메인</a>
+      <a href="index.html@link=c56ye9nz.html">단빛 소개</a>
+      <a class="active" href="index.html@link=2025danbit.html">2025 단빛 전시회</a>
+      <a href="index.html@link=14ozc6yh.html">2024 단빛 전시회</a>
+      <a href="index.html@link=4k84mhmu.html">2023 단빛 전시회</a>
+      <a href="index.html@link=7itnju2x.html">2021 단빛 전시회</a>
+      <a href="index.html@link=2z6ntwmd.html">2020 단빛 전시회</a>
+      <a href="index.html@link=6kk0ah4u.html">2019 서울&amp;단양 전시회</a>
+      <a href="index.html@link=1ko0get2.html">단빛 활동 모습</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="title">2025 단빛 전시회</h1>
+    <div class="intro">
+      <strong>2025 단빛 전시회</strong><br>
+      2025년 단빛 학생들의 사진 작품을 모은 온라인 전시 갤러리입니다.
+    </div>
+    <a class="open-link" href="../2025/index.html" target="_blank" rel="noopener">2025 전시 갤러리 새 창으로 보기</a>
+
+    <div class="frame-wrap">
+      <iframe src="../2025/index.html" title="2025 단빛 전시회"></iframe>
+    </div>
+  </main>
+
+  <footer class="footer">
+    단빛 사진 갤러리 · 학생 사진교육 아카이브
+  </footer>
+</body>
+</html>
